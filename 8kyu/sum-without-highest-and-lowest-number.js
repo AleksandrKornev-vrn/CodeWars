@@ -16,6 +16,14 @@
 // ✅ ОТВЕТ:
 
 function sumArray(array) {
-  
+  if (!array || array.length < 2) {
+    return 0
+  } 
+  return array.sort((left, right) => left - right).reduce((accum, item, i, array) => {
+    if (i !==0 && i !== array.length-1) {
+      accum += item
+    };
+    return accum;
+  }, 0);
 };
-console.log(1);
+
