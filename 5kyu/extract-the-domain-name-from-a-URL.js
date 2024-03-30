@@ -8,20 +8,9 @@
 // ✅ ОТВЕТ:
 
 function domainName (url) {
-  let domainName = "";
-  if (url.includes("www")) {
-    for (let i = url.indexOf("www") + 4; url[i] !== "."; i++) {
-      domainName += url[i];
-    };
-  } else if (url.includes("//")) {
-    for (let i = url.indexOf("//") + 2; url[i] !== "."; i++) {
-      domainName += url[i];
-    };
-  } else {
-  for (let i = 0; url[i] !== "."; i++) {
-    domainName += url[i];
-  };
-}
-  return domainName;
+  url = url.replace ("http://", "");
+  url = url.replace ("https://", "");
+  url = url.replace ("www.", "");
+  return url.split(".")[0];
 };
 
