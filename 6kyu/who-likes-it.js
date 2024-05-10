@@ -12,6 +12,29 @@
 
 // ✅ ОТВЕТ:
 
+// Вариант 1:
+function likes (names) {
+  let rezult;
+  switch (names.length) {
+    case 0:
+      rezult = "no one likes this";
+      break;
+    case 1:
+      rezult = names[0] + " likes this";
+      break;
+    case 2:
+      rezult = names[0] + " and " + names[1] + " like this";
+      break;    
+    case 3:
+      rezult = names[0] + ", " + names[1] + " and " + names[2] + " like this";
+      break;
+    default:
+      rezult = names[0] + ", " + names[1] + " and " + (names.length - 2) + " others like this";
+  };
+  return rezult;
+};
+
+// Вариант 2:
 function likes (names) {
   if (names.length === 0) {
     return "no one likes this";
@@ -24,4 +47,5 @@ function likes (names) {
   } else if (names.length > 3) {
     return names[0] + ", " + names[1] + " and " + (names.length - 2) + " others like this";
   }
-}
+};
+
